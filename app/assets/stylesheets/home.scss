@@ -9,9 +9,23 @@ header {
   border-bottom: 1px solid #424242;
 }
 
-.logo {
+.logo-image {
   height: 40px;
   width: 40px;
+}
+
+.logo-text {
+  color: #fafafa;
+  text-align: center;
+  padding-top: 3px;
+  font-size: 25px;
+  text-decoration: underline;
+  text-decoration-style: double;
+}
+
+// TODO Rename
+.app-body {
+  margin: 100px 25px;
 }
 
 footer {

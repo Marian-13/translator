@@ -1,17 +1,20 @@
 class GoogleSessionsController < ApplicationController
   def new
-    redirect_to google_oauth2_url
+    if user_logged_in?
+      redirect_to root_path, notice: 'You have already logged in!' # TODO Extract
+    else
+      redirect_to google_oauth2_url
+    end
   end
 
   def create
-    session[:google_user_name] = request.env["omniauth.auth"].info.name
-
+    user = User.find_or_create_by!(google_uid: request.env["omniauth.auth"].uid)
+    session[:user_id] = user.id
     redirect_to root_url
   end
 
   def destroy
-    sessions[:google_user_name] = nil
-
+    session[:user_id] = nil
     redirect_to root_url
   end
 

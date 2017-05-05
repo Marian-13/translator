@@ -2,19 +2,49 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-9">
-        <%= image_tag 'abstract_logo.svg', class: 'logo' %>
+        <%= image_tag 'abstract_logo.svg', class: 'logo-image' %>
+        <span class="logo-text">Translator</span>
       </div>
       <div class="col-md-3">
-        <%= render partial: 'google_login' %>
-
-        <a class="btn btn-block btn-social btn-google">
-          <span class="fa fa-sign-out"></span> Log outnt
-        </a>
+        <% if user_logged_in? %>
+          <%= render partial: 'google_logout' %>
+        <% else %>
+          <%= render partial: 'google_login' %>
+        <% end %>
       </div>
     </div>
   </div>
 </header>
 
+<div class="container-fluid app-body">  <!-- TODO Rename app-body -->
+  <div class="row">
+    <div class="col-md-5 input-text">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="btn-group">
+            <button type="button" class="btn btn-default active">English</button>
+            <button type="button" class="btn btn-default">Russian</button>
+            <button type="button" class="btn btn-default">Ukrainian</button>
+          </div>
+        </div>
+        <div class="panel-body">Panel Content</div>
+      </div>
+    </div>
+
+    <div class="col-md-5 output-text">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="btn-group">
+            <button type="button" class="btn btn-default active">Ukrainian</button>
+            <button type="button" class="btn btn-default">Russian</button>
+            <button type="button" class="btn btn-default">English</button>
+          </div>
+        </div>
+        <div class="panel-body">Panel Content</div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <footer>
   <div class="container-fluid">

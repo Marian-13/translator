@@ -49,3 +49,17 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# rspec-rails is a testing framework for Rails 3.x, 4.x and 5.0
+group :development, :test do
+  gem 'rspec-rails', '~> 3.5'
+end
+
+# bootstrap-sass is a Sass-powered version of Bootstrap 3
+gem 'bootstrap-sass', '~> 3.3.6'
+
+# jQuery for Rails
+gem 'jquery-rails', '~> 4.3.1'
+
+# This gem packages the jQuery UI assets for the Rails
+gem 'jquery-ui-rails', '~> 6.0.1'

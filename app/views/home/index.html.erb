@@ -5,13 +5,11 @@
         <%= image_tag 'abstract_logo.svg', class: 'logo' %>
       </div>
       <div class="col-md-3">
-        <a class="btn btn-raised btn-block btn-social btn-google">
-          <span class="fa fa-google"></span> Sign in with Google
-        </a>
+        <%= render partial: 'google_login' %>
 
-        <button type="button" class="btn btn-primary">
-          <span class="glyphicon glyphicon-log-out"></span> Log out
-        </button>
+        <a class="btn btn-block btn-social btn-google">
+          <span class="fa fa-sign-out"></span> Log outnt
+        </a>
       </div>
     </div>
   </div>

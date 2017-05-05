@@ -55,11 +55,18 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
 end
 
-# bootstrap-sass is a Sass-powered version of Bootstrap 3
-gem 'bootstrap-sass', '~> 3.3.6'
-
 # jQuery for Rails
 gem 'jquery-rails', '~> 4.3.1'
 
 # This gem packages the jQuery UI assets for the Rails
 gem 'jquery-ui-rails', '~> 6.0.1'
+
+# Strategy to authenticate with Google via OAuth2 in OmniAuth
+gem "omniauth-google-oauth2", '~> 0.4.1'
+
+# font-awesome-rails provides the Font-Awesome web fonts and stylesheets
+gem "font-awesome-rails", '~> 4.7.0.2'
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-bootstrap'
+end

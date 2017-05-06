@@ -1,0 +1,2 @@
+module LanguageDetectionsHelper
+end

@@ -22,12 +22,13 @@
       <div class="panel panel-default">
         <div class="panel-heading">
           <div class="btn-group">
-            <button type="button" class="btn btn-default active">English</button>
-            <button type="button" class="btn btn-default">Russian</button>
-            <button type="button" class="btn btn-default">Ukrainian</button>
+            <button type="button" class="btn btn-default">English</button>
+            <%= render partial: 'detect_language' %>
           </div>
         </div>
-        <div class="panel-body">Panel Content</div>
+        <div class="panel-body">
+          <textarea class="form-control" rows="5" id="input_text"></textarea>
+        </div>
       </div>
     </div>
 

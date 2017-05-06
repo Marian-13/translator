@@ -70,3 +70,10 @@ gem "font-awesome-rails", '~> 4.7.0.2'
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap'
 end
+
+# Detect Language API Client
+gem 'detect_language', '~>  1.0.7'
+
+# A Sprockets transformer that converts ES6 code into vanilla ES5 with Babel JS
+gem 'sprockets', '>= 3.0.0' # sprockets-es6 dependency
+gem 'sprockets-es6', '~> 0.9.2'

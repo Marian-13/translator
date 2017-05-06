@@ -77,3 +77,12 @@ gem 'detect_language', '~>  1.0.7'
 # A Sprockets transformer that converts ES6 code into vanilla ES5 with Babel JS
 gem 'sprockets', '>= 3.0.0' # sprockets-es6 dependency
 gem 'sprockets-es6', '~> 0.9.2'
+
+# This library adds CommonJS module support to Sprockets (via Browserify)
+gem 'browserify-rails', '~> 4.2.0'
+
+# HTTP is an easy-to-use client library for making requests from Ruby
+gem 'http', '~> 2.2.2'
+
+# Hashie is a growing collection of tools that extend Hashes and make them more useful.
+gem 'hashie', '~> 3.5.5'

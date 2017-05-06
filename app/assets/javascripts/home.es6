@@ -3,7 +3,7 @@ $(document).ready(function() {
     $.ajax({
       method: "GET",
       url: "language_detections.js",
-      data: { text_string: $("#input_text").val() }
+      data: { text_string: $("#input-text").val() }
     });
   });
 })

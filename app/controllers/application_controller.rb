@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    User.find_by(id: session[:user_id]) if user_logged_in?
+    @current_user ||= User.find_by(id: session[:user_id]) if user_logged_in?
   end
 
   def authorize_user

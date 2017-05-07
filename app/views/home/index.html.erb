@@ -7,7 +7,17 @@
       </div>
       <div class="col-md-3">
         <% if user_logged_in? %>
-          <%= render partial: 'google_logout' %>
+          <div class="row">
+            <div class="col-md-6">
+              <%= render partial: 'google_logout' %>
+            </div>
+            <div id="user-google-name" class="col-md-3">
+              <%= current_user.google_name %>
+            </div>
+            <div class="col-md-3">
+              <%= image_tag "#{current_user.google_image}", id: 'user-google-image' %>
+            </div>
+          </div>
         <% else %>
           <%= render partial: 'google_login' %>
         <% end %>
@@ -18,7 +28,7 @@
 
 <div class="container-fluid app-body">  <!-- TODO Rename app-body -->
   <div class="row">
-    <div class="col-md-5 input-text">
+    <div class="col-md-5">
       <div class="panel panel-default">
         <div class="panel-heading">
           <select id="input-text-language" class="btn btn-default">
@@ -33,7 +43,7 @@
       </div>
     </div>
 
-    <div class="col-md-5 output-text">
+    <div class="col-md-5">
       <div class="panel panel-default">
         <div class="panel-heading">
           <select id="output-text-language" class="btn btn-default">

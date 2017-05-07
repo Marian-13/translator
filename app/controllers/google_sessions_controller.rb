@@ -8,7 +8,11 @@ class GoogleSessionsController < ApplicationController
   end
 
   def create
-    user = User.find_or_create_by!(google_uid: request.env["omniauth.auth"].uid)
+    user = User.find_or_create_by!(
+      google_uid: request.env["omniauth.auth"].uid,
+      google_name: request.env["omniauth.auth"].info.name,
+      google_image: request.env["omniauth.auth"].info.image
+    )
     session[:user_id] = user.id
     redirect_to root_url
   end

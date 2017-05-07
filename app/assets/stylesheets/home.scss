@@ -10,8 +10,8 @@ header {
 }
 
 .logo-image {
-  height: 40px;
-  width: 40px;
+  height: 35px;
+  width: 35px;
 }
 
 .logo-text {
@@ -21,6 +21,16 @@ header {
   font-size: 25px;
   text-decoration: underline;
   text-decoration-style: double;
+}
+
+#user-google-name {
+  color: white;
+  font-size: 20px;
+}
+
+#user-google-image {
+  height: 35px;
+  width: 35px;
 }
 
 // TODO Rename

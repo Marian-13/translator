@@ -17,10 +17,12 @@ class TranslateTextByTransLtr
     text               = create_text(text_string)
 
     if from_language_code.valid? && to_language_code.valid? && text.valid?
+      text_query = text.to_query(:text)
+
       responce = HTTP.get(
         "#{TRANS_LTR_ROOT_URL}" \
         "/api/translate" \
-        "?text=#{text}&to=#{to_language_code}&from=#{from_language_code}"
+        "?#{text_query}&to=#{to_language_code}&from=#{from_language_code}"
       )
 
       object = JSON.parse(responce.to_s)

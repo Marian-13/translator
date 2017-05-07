@@ -14,4 +14,8 @@ class Text
   def to_s
     text_string
   end
+
+  def to_query(key)
+    text_string.to_query(key)
+  end
 end

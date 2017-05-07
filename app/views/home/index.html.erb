@@ -21,10 +21,13 @@
     <div class="col-md-5 input-text">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <div class="btn-group">
-            <input id="input-text-language" class="btn btn-default" type="text" value="English" readonly>
-            <%= render partial: 'detect_language' %>
-          </div>
+          <select id="input-text-language" class="btn btn-default">
+            <option value="English" selected>English</option>
+            <option value="Russian">Russian</option>
+            <option value="Ukrainian">Ukrainian</option>
+          </select>
+
+          <%= render partial: 'detect_language' %>
         </div>
           <textarea id="input-text" class="panel-body form-control" rows="5"></textarea>
       </div>
@@ -33,13 +36,12 @@
     <div class="col-md-5 output-text">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <input id="output-text-language" class="btn btn-default" type="text" value="Ukrainian" readonly>
-          <!-- <select name="cars">
-            <option value="volvo">Volvo</option>
-            <option value="saab">Saab</option>
-            <option value="fiat">Fiat</option>
-            <option value="audi">Audi</option>
-          </select> -->
+          <select id="output-text-language" class="btn btn-default">
+            <option value="English">English</option>
+            <option value="Russian">Russian</option>
+            <option value="Ukrainian" selected>Ukrainian</option>
+          </select>
+
           <button id="text-translator" type="button" class="btn btn-info">Translate</button>
         </div>
         <div id="output-text" class="panel-body form-control"></div>

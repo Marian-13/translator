@@ -86,3 +86,6 @@ gem 'http', '~> 2.2.2'
 
 # Hashie is a growing collection of tools that extend Hashes and make them more useful.
 gem 'hashie', '~> 3.5.5'
+
+# A Ruby gem that provides the ISO 639-2 and ISO 639-1 data sets
+gem 'iso-639', '~> 0.2.8'

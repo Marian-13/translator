@@ -5,8 +5,9 @@ Rails.application.routes.draw do
   get    '/auth/google_oauth2/callback', to: 'google_sessions#create' # TODO Not RESTful action
   delete 'log_out_from_google',          to: 'google_sessions#destroy'
 
-  # get 'detect_language/:text_string', to: 'language_detections#show'
-
   resources :language_detections, only: [:index]
+
+  resources :text_translations, only: [:index]
+
   root to: 'home#index'
 end

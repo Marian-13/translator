@@ -11,8 +11,7 @@ class Text
     text_string =~ VALIDITY_REGEX
   end
 
-  private
-    def initialize_text_string(text_string)
-      text_string.downcase
-    end
+  def to_s
+    text_string
+  end
 end

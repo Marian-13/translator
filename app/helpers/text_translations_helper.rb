@@ -1,0 +1,2 @@
+module TextTranslationsHelper
+end

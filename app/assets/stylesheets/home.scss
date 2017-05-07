@@ -28,6 +28,19 @@ header {
   margin: 100px 25px;
 }
 
+#input-text {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  font-size: 20px;
+}
+
+#output-text {
+  height: 172px; // TODO height
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  font-size: 20px;
+}
+
 footer {
   height: 60px;
   width: 100%;

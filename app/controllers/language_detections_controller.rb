@@ -1,6 +1,6 @@
 class LanguageDetectionsController < ApplicationController
   def index
-    @language = DetectLanguageOfText.new(
+    @language_name = DetectLanguageNameOfText.new(
       text: Text.new(text_string: params[:text_string])
     ).call
 

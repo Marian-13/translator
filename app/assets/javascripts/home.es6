@@ -1,6 +1,6 @@
 // detect language
 $(document).ready(function() {
-  $("#language-detector").click(function() {
+  $("#detect-language").click(function() {
     $.ajax({
       method: "GET",
       url: "language_detections.js",
@@ -11,7 +11,7 @@ $(document).ready(function() {
 
 // translate text
 $(document).ready(function() {
-  $("#text-translator").click(function() {
+  $("#translate-text").click(function() {
     $.ajax({
       method: "GET",
       url: "text_translations.js",
@@ -38,17 +38,18 @@ $(document).ready(function() {
 // speak input text
 $(document).ready(function() {
   $("#speak-input-text").click(function() {
-    let inputText         = $("#input-text").val();
+    let inputText         = $("#input-text").val(); // input-text -> input
     let inputLanguageName = $("#input-text-language").val();
+    speakText(inputText, inputLanguageName);
+  })
+})
 
-    let langugeCode =
-      convertLanguageNameToArtyomLanguageCode(inputLanguageName);
-
-    if (inputText && langugeCode) {
-      artyom.say(inputText, {
-        lang: langugeCode
-      });
-    }
+// speak output text
+$(document).ready(function() {
+  $("#speak-output-text").click(function() {
+    let outputText         = $("#output-text").text(); // output-text -> div
+    let outputLanguageName = $("#output-text-language").val();
+    speakText(outputText, outputLanguageName);
   })
 })
 

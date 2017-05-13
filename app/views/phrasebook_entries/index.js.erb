@@ -1,0 +1,9 @@
+(function() {
+  let phrasebookEntries = $("#phrasebook-entries");
+
+  <% @phrasebook_entries.reverse_each do |phrasebook_entry| %>
+    phrasebookEntries.append(
+      "<%= escape_javascript(render partial: 'phrasebook_entry', locals: { phrasebook_entry: phrasebook_entry })%>"
+    );
+  <% end %>
+})()

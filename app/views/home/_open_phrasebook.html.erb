@@ -1,16 +1,14 @@
 <% if user_logged_in? %>
-  <%= link_to phrasebook_path,
-              id: 'show-phrasebook',
-              class: 'btn btn-default',
-              title: 'Show phrasebook',
-              remote: true do %>
+  <button id="toogle-phrasebook-container"
+          class="btn btn-default"
+          title="Log in to review your phrasebook">
     &#10026;
-  <% end %>
+  </button>
 <% else %>
   <%= link_to log_in_to_google_path,
               id: 'show-phrasebook',
               class: 'btn btn-default',
-              title: 'Log in to review your phrasebook' do %>
+              title: 'Show phrasebook' do %>
     &#10026;
   <% end %>
 <% end %>

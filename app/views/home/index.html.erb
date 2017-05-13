@@ -28,7 +28,7 @@
 
 <div class="container-fluid app-body">  <!-- TODO Rename app-body -->
   <div class="row">
-    <div id="input-text-container" class="col-md-4">
+    <div id="input-text-container" class="col-md-5">
       <div class="panel panel-default">
         <div class="panel-heading">
           <select id="input-text-language" class="btn btn-default">
@@ -46,7 +46,7 @@
       </div>
     </div>
 
-    <div id="output-text-container" class="col-md-4">
+    <div id="output-text-container" class="col-md-5">
       <div class="panel panel-default">
         <div class="panel-heading">
           <select id="output-text-language" class="btn btn-default">
@@ -59,7 +59,7 @@
         </div>
         <div id="output-text" class="panel-body form-control"></div>
         <div class="panel-footer">
-          <button id="add-to-phrasebook" class="btn btn-default btn-xs">&#9734;</button>
+          <button id="add-entry-to-phrasebook-entries" class="btn btn-default btn-xs">&#9734;</button>
           <button id="speak-output-text" class="btn btn-default btn-xs">&#128266;</button>
           <%= render partial: 'copy_output_text' %>
         </div>
@@ -69,30 +69,22 @@
     <div id="phrasebook-container" class="col-md-4">
       <div class="panel panel-default">
         <div class="panel-heading">
+          <button class="btn btn-default">+</button>
+          <button id="load-phrasebook-entries" class="btn btn-default">+</button>
         </div>
-        <table class="panel-body table">
-          <tbody id="phrasebook">
-            <tr>
-              <td>John</td>
-              <td>Doe</td>
-            </tr>
-            <tr>
-              <td>Mary</td>
-              <td>Moe</td>
-            </tr>
-            <tr>
-              <td>July</td>
-              <td>Dooley</td>
-            </tr>
-          </tbody>
-        </table>
+        <div id="phrasebook" class="panel-body">
+          <table class="table">
+            <tbody id="phrasebook-entries"></tbody>
+          </table>
+        </div>
+        <div class="panel-footer"></div>
       </div>
     </div>
   </div>
 </div>
 
-<footer>
+<!-- <footer>
   <div class="container-fluid">
     <p>Footer Text</p>
   </div>
-</footer>
+</footer> -->

@@ -47,6 +47,10 @@ header {
   float: right;
 }
 
+#toogle-phrasebook-container {
+  float: right;
+}
+
 #show-phrasebook {
   float: right;
 }
@@ -55,6 +59,21 @@ header {
   height: 172px; // TODO height
   border-radius: 0;
   font-size: 20px;
+}
+
+#phrasebook-container {
+  display: none;
+}
+
+#load-phrasebook-entries {
+  float: right;
+}
+
+#phrasebook {
+  min-height: 172px;
+  max-height: 172px;
+  overflow: auto;
+  border-radius: 0;
 }
 
 footer {

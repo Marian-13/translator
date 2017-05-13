@@ -72,15 +72,53 @@ $(document).ready(function() {
   });
 })
 
-// add to phrasebook
+// toggle phrasebook container
 $(document).ready(function() {
-  $("#add-to-phrasebook").click(function() {
+  $("#toogle-phrasebook-container").click(function() {
+    let inputTextContainer  = $("#input-text-container");
+    let outputTextContainer = $("#output-text-container");
+    let phrasebookContainer = $("#phrasebook-container");
+
+    if (phrasebookContainer.is(":visible")) {
+      inputTextContainer.removeClass("col-md-4").addClass("col-md-5");
+      outputTextContainer.removeClass("col-md-4").addClass("col-md-5");
+      phrasebookContainer.hide();
+    } else {
+      inputTextContainer.removeClass("col-md-5").addClass("col-md-4");
+      outputTextContainer.removeClass("col-md-5").addClass("col-md-4");
+      phrasebookContainer.show();
+    }
+  })
+})
+
+// add entry to phrasebook entries
+$(document).ready(function() {
+  $("#add-entry-to-phrasebook-entries").click(function() {
     let inputText  = $("#input-text").val();
     let outputText = $("#output-text").text();
-    console.log("bef");
+
     if (inputText && outputText) {
-      console.log("if");
-      $("#phrasebook").append(`<tr><td>${inputText}</td><td>${outputText}</td></tr>);`);
+      $("#phrasebook-entries").prepend(
+        `<tr><td>${inputText}</td><td>${outputText}</td></tr>);`
+      );
+
+      $.ajax({
+        method: "POST",
+        url: "phrasebook_entries.js",
+        data: {
+          input_text: inputText,
+          output_text: outputText
+        }
+      });
     }
+  })
+})
+
+$(document).ready(function() {
+  $("#load-phrasebook-entries").click(function() {
+    $.ajax({
+      method: "GET",
+      url: "phrasebook_entries.js"
+    });
   })
 })

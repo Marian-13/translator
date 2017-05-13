@@ -21,3 +21,13 @@ $(document).ready(function() {
     });
   });
 })
+
+$(document).ready(function() {
+  $("#swap-language").click(function() {
+    let inputLanguageName  = $("#input-text-language").val();
+    let outputLanguageName = $("#output-text-language").val();
+
+    $("#input-text-language").val(outputLanguageName);
+    $("#output-text-language").val(inputLanguageName);
+  })
+})

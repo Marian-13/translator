@@ -27,6 +27,7 @@
 </header>
 
 <div class="container-fluid app-body">  <!-- TODO Rename app-body -->
+
   <div class="row">
     <div class="col-md-5">
       <div class="panel panel-default">
@@ -60,6 +61,11 @@
           <button id="text-translator" type="button" class="btn btn-info">Translate</button>
         </div>
         <div id="output-text" class="panel-body form-control"></div>
+        <div class="panel-footer">
+          <button id="speak-input-text" class="btn btn-default btn-xs">&#9734;</button>
+          <button id="speak-input-text" class="btn btn-default btn-xs">&#128266;</button>
+          <%= render partial: 'copy_output_text' %>
+        </div>
       </div>
     </div>
   </div>

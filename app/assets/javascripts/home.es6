@@ -1,3 +1,4 @@
+// detect language
 $(document).ready(function() {
   $("#language-detector").click(function() {
     $.ajax({
@@ -8,6 +9,7 @@ $(document).ready(function() {
   });
 })
 
+// translate text
 $(document).ready(function() {
   $("#text-translator").click(function() {
     $.ajax({
@@ -22,6 +24,7 @@ $(document).ready(function() {
   });
 })
 
+// swap language
 $(document).ready(function() {
   $("#swap-language").click(function() {
     let inputLanguageName  = $("#input-text-language").val();
@@ -32,7 +35,7 @@ $(document).ready(function() {
   })
 })
 
-
+// speak input text
 $(document).ready(function() {
   $("#speak-input-text").click(function() {
     let inputText         = $("#input-text").val();
@@ -47,4 +50,23 @@ $(document).ready(function() {
       });
     }
   })
+})
+
+// copy output text
+$(document).ready(function() {
+  let copyOutputText = $("#copy-output-text");
+  copyOutputText.tooltip({
+    trigger: 'manual',
+    title: 'Copied!',
+    placement: 'bottom'
+  });
+
+  let clipboard = new Clipboard("#copy-output-text");
+
+  clipboard.on('success', function(e) {
+    copyOutputText.tooltip("show");
+    setTimeout(function() {
+      copyOutputText.tooltip("hide");
+    }, 2000)
+  });
 })

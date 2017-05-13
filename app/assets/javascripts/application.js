@@ -17,4 +17,5 @@
 //= require jquery-ui
 //= require bootstrap
 //= require artyom.js/build-vanilla/artyom.js
+//= require clipboard
 //= require_tree .

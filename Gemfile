@@ -89,3 +89,6 @@ gem 'hashie', '~> 3.5.5'
 
 # A Ruby gem that provides the ISO 639-2 and ISO 639-1 data sets
 gem 'iso-639', '~> 0.2.8'
+
+# clipboard-rails gem is the integration of clipboard.js javascript library
+gem 'clipboard-rails'

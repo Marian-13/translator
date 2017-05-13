@@ -39,8 +39,7 @@ header {
 }
 
 #input-text {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+  border-radius: 0;
   font-size: 20px;
 }
 
@@ -50,8 +49,7 @@ header {
 
 #output-text {
   height: 172px; // TODO height
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+  border-radius: 0;
   font-size: 20px;
 }
 

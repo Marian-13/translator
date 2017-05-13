@@ -71,3 +71,16 @@ $(document).ready(function() {
     }, 2000)
   });
 })
+
+// add to phrasebook
+$(document).ready(function() {
+  $("#add-to-phrasebook").click(function() {
+    let inputText  = $("#input-text").val();
+    let outputText = $("#output-text").text();
+    console.log("bef");
+    if (inputText && outputText) {
+      console.log("if");
+      $("#phrasebook").append(`<tr><td>${inputText}</td><td>${outputText}</td></tr>);`);
+    }
+  })
+})

@@ -28,7 +28,7 @@
 
 <div class="container-fluid app-body">  <!-- TODO Rename app-body -->
   <div class="row">
-    <div class="col-md-5">
+    <div id="input-text-container" class="col-md-4">
       <div class="panel panel-default">
         <div class="panel-heading">
           <select id="input-text-language" class="btn btn-default">
@@ -46,7 +46,7 @@
       </div>
     </div>
 
-    <div class="col-md-5">
+    <div id="output-text-container" class="col-md-4">
       <div class="panel panel-default">
         <div class="panel-heading">
           <select id="output-text-language" class="btn btn-default">
@@ -55,13 +55,37 @@
             <option value="Ukrainian" selected>Ukrainian</option>
           </select>
           <button id="translate-text" type="button" class="btn btn-info">Translate</button>
+          <%= render partial: 'open_phrasebook' %>
         </div>
         <div id="output-text" class="panel-body form-control"></div>
         <div class="panel-footer">
-          <button id="speak-input-text" class="btn btn-default btn-xs">&#9734;</button>
+          <button id="add-to-phrasebook" class="btn btn-default btn-xs">&#9734;</button>
           <button id="speak-output-text" class="btn btn-default btn-xs">&#128266;</button>
           <%= render partial: 'copy_output_text' %>
         </div>
+      </div>
+    </div>
+
+    <div id="phrasebook-container" class="col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+        </div>
+        <table class="panel-body table">
+          <tbody id="phrasebook">
+            <tr>
+              <td>John</td>
+              <td>Doe</td>
+            </tr>
+            <tr>
+              <td>Mary</td>
+              <td>Moe</td>
+            </tr>
+            <tr>
+              <td>July</td>
+              <td>Dooley</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>

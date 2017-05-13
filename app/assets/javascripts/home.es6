@@ -31,3 +31,20 @@ $(document).ready(function() {
     $("#output-text-language").val(inputLanguageName);
   })
 })
+
+
+$(document).ready(function() {
+  $("#speak-input-text").click(function() {
+    let inputText         = $("#input-text").val();
+    let inputLanguageName = $("#input-text-language").val();
+
+    let langugeCode =
+      convertLanguageNameToArtyomLanguageCode(inputLanguageName);
+
+    if (inputText && langugeCode) {
+      artyom.say(inputText, {
+        lang: langugeCode
+      });
+    }
+  })
+})

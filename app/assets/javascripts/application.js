@@ -16,4 +16,5 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require bootstrap
+//= require artyom.js/build-vanilla/artyom.js
 //= require_tree .

@@ -31,7 +31,9 @@ $(document).ready(function() {
     let outputLanguageName = $("#output-text-language").val();
 
     $("#input-text-language").val(outputLanguageName);
-    $("#output-text-language").val(inputLanguageName);
+    if (inputLanguageName) {
+      $("#output-text-language").val(inputLanguageName);
+    }
   })
 })
 
@@ -162,4 +164,30 @@ $(document).ready(function() {
       }
     });
   })
+})
+
+// recognize input text // TODO change language
+$(document).ready(function() {
+  $("#recognize-input-text").click(function() {
+    let settings = {
+      continuous: true,
+      onResult: function(text){
+        $("#input-text").val(text);
+        console.log("Recognized text: ", text);
+      },
+      onStart:function(){
+        console.log("Recognition started.");
+      },
+      onEnd:function(){
+        alert("Recognition stopped.");
+      }
+    };
+
+    let userDictation = artyom.newDictation(settings);
+    userDictation.start();
+
+    setTimeout(function() {
+      userDictation.stop();
+    }, 2000);
+  });
 })

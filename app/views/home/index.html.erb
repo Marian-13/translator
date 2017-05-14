@@ -33,7 +33,12 @@
         <div class="panel-heading">
           <select id="input-text-language" class="btn btn-default">
             <option value="English" selected>English</option>
+            <option value="German">German</option>
+            <option value="French">French</option>
+            <option value="Italian">Italian</option>
+            <option value="Polish">Polish</option>
             <option value="Russian">Russian</option>
+            <option value="Spanish; Castilian">Spanish</option>
             <option value="Ukrainian">Ukrainian</option>
           </select>
           <%= render partial: 'detect_language' %>
@@ -44,6 +49,9 @@
           <button id="speak-input-text" class="btn btn-default btn-xs" title="Speak text">
             &#128266;
           </button>
+          <button id="recognize-input-text" class="btn btn-default btn-xs">
+            <i class="fa fa-microphone" aria-hidden="true"></i>
+          </button>
         </div>
       </div>
     </div>
@@ -53,7 +61,12 @@
         <div class="panel-heading">
           <select id="output-text-language" class="btn btn-default">
             <option value="English">English</option>
+            <option value="German">German</option>
+            <option value="French">French</option>
+            <option value="Italian">Italian</option>
+            <option value="Polish">Polish</option>
             <option value="Russian">Russian</option>
+            <option value="Spanish; Castilian">Spanish</option>
             <option value="Ukrainian" selected>Ukrainian</option>
           </select>
           <button id="translate-text" type="button" class="btn btn-info">Translate</button>

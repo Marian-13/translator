@@ -98,10 +98,6 @@ $(document).ready(function() {
     let outputText = $("#output-text").text();
 
     if (inputText && outputText) {
-      $("#phrasebook-entries").prepend(
-        `<tr><td>${inputText}</td><td>${outputText}</td></tr>);`
-      );
-
       $.ajax({
         method: "POST",
         url: "phrasebook_entries.js",
@@ -114,6 +110,7 @@ $(document).ready(function() {
   })
 })
 
+// remove entry from phrasebook entries
 $(document).ready(function() {
   $("#phrasebook-entries")
     .on("click", ".remove-entry-from-phrasebook-entries", function() {
@@ -121,17 +118,47 @@ $(document).ready(function() {
     })
 })
 
-
+// load phrasebook entries
 $(document).ready(function() {
   $("#load-phrasebook-entries").click(function() {
     let phrasebookEntries = $("#phrasebook-entries");
+    let limit  = phrasebookEntries.data("limit");
+    let offset = phrasebookEntries.data("offset");
+
+    console.log(limit);
+    console.log(limit === 0);
+
+    if (limit === 0) { // TODO Refactor
+      limit = 3;
+      offset = 0;
+      phrasebookEntries.data("limit", limit);
+      phrasebookEntries.data("offset", offset);
+      phrasebookEntries.empty();
+    }
 
     $.ajax({
       method: "GET",
       url: "phrasebook_entries.js",
       data: {
-        limit: phrasebookEntries.data("limit"),
-        offset: phrasebookEntries.data("offset")
+        limit: limit,
+        offset: offset
+      }
+    });
+  })
+})
+
+// search phrasebook entries
+$(document).ready(function() {
+  $("#search-phrasebook-entries").click(function() {
+    let phrasebookEntries = $("#phrasebook-entries");
+    phrasebookEntries.data("limit", 0);
+    phrasebookEntries.empty();
+
+    $.ajax({
+      method: "GET",
+      url: "phrasebook_entries.js",
+      data: {
+        search_query: $("#search-query").val(),
       }
     });
   })

@@ -25,7 +25,7 @@ header {
 
 #user-google-name {
   color: white;
-  font-size: 20px;
+  font-size: 12px;
 }
 
 #user-google-image {
@@ -79,8 +79,9 @@ header {
 footer {
   height: 60px;
   width: 100%;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   background-color: #bdbdbd;
   border-top: 1px solid #757575;
+  z-index: 10000;
 }

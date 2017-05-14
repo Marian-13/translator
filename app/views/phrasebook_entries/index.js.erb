@@ -8,5 +8,5 @@
   <% end %>
 
   let offset = phrasebookEntries.data("offset");
-  phrasebookEntries.data("offset", offset + 3);
+  phrasebookEntries.data("offset", offset + <%= escape_javascript(@phrasebook_entries.size.to_s) %>);
 })()

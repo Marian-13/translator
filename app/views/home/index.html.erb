@@ -8,13 +8,13 @@
       <div class="col-md-3">
         <% if user_logged_in? %>
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 col-xs-6">
               <%= render partial: 'google_logout' %>
             </div>
-            <div id="user-google-name" class="col-md-3">
+            <div id="user-google-name" class="col-md-3 col-xs-3">
               <%= current_user.google_name %>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 col-xs-3">
               <%= image_tag "#{current_user.google_image}", id: 'user-google-image' %>
             </div>
           </div>
@@ -41,7 +41,9 @@
         </div>
         <textarea id="input-text" class="panel-body form-control" rows="5"></textarea>
         <div class="panel-footer">
-          <button id="speak-input-text" class="btn btn-default btn-xs">&#128266;</button>
+          <button id="speak-input-text" class="btn btn-default btn-xs" title="Speak text">
+            &#128266;
+          </button>
         </div>
       </div>
     </div>
@@ -55,12 +57,29 @@
             <option value="Ukrainian" selected>Ukrainian</option>
           </select>
           <button id="translate-text" type="button" class="btn btn-info">Translate</button>
-          <%= render partial: 'open_phrasebook' %>
+          <% if user_logged_in? %>
+            <button id="toogle-phrasebook-container"
+                    class="btn btn-default"
+                    title="Toogle phrasebook">
+              &#10026;
+            </button>
+          <% else %>
+            <%= link_to log_in_to_google_path,
+                        id: 'show-phrasebook',
+                        class: 'btn btn-default',
+                        title: 'Log in to review your phrasebook' do %>
+              &#10026;
+            <% end %>
+          <% end %>
         </div>
         <div id="output-text" class="panel-body form-control"></div>
         <div class="panel-footer">
-          <button id="add-entry-to-phrasebook-entries" class="btn btn-default btn-xs">&#9734;</button>
-          <button id="speak-output-text" class="btn btn-default btn-xs">&#128266;</button>
+          <button id="add-entry-to-phrasebook-entries" class="btn btn-default btn-xs" title="Add to phrasebook">
+            &#9734;
+          </button>
+          <button id="speak-output-text" class="btn btn-default btn-xs" title="Speak text">
+            &#128266;
+          </button>
           <%= render partial: 'copy_output_text' %>
         </div>
       </div>
@@ -69,22 +88,33 @@
     <div id="phrasebook-container" class="col-md-4">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <button class="btn btn-default">+</button>
-          <button id="load-phrasebook-entries" class="btn btn-default">+</button>
+          <div class="input-group">
+            <input id="search-query" type="text" class="form-control" placeholder="Search in phrasebook">
+            <div class="input-group-btn">
+              <button id="search-phrasebook-entries" class="btn btn-default">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
         </div>
-        <div id="phrasebook" class="panel-body">
+        <div id="phrasebook" class="panel-body form-control">
           <table class="table">
             <tbody id="phrasebook-entries" data-limit="3" data-offset="0"></tbody>
           </table>
         </div>
-        <div class="panel-footer"></div>
+        <div class="panel-footer">
+          <button class="btn btn-default btn-xs invisible">+</button> <!-- TODO Remove terporary hack -->
+          <button id="load-phrasebook-entries" class="btn btn-default btn-xs" title="Load phrasebook entries">
+            +
+          </button>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- <footer>
+<footer>
   <div class="container-fluid">
-    <p>Footer Text</p>
+    <i class="fa fa-copyright" aria-hidden="true"></i> 2017 - Translator
   </div>
-</footer> -->
+</footer>

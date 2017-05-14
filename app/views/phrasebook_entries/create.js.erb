@@ -1,0 +1,3 @@
+$("#phrasebook-entries").prepend(
+  "<%= escape_javascript(render partial: 'phrasebook_entry', locals: { phrasebook_entry: @phrasebook_entry })%>"
+);

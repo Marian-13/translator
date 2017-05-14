@@ -6,4 +6,7 @@
       "<%= escape_javascript(render partial: 'phrasebook_entry', locals: { phrasebook_entry: phrasebook_entry })%>"
     );
   <% end %>
+
+  let offset = phrasebookEntries.data("offset");
+  phrasebookEntries.data("offset", offset + 3);
 })()

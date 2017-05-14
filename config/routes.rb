@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :text_translations, only: [:index]
 
-  resources :phrasebook_entries, only: [:index, :create]
+  resources :phrasebook_entries, only: [:index, :create, :destroy]
 
   root to: 'home#index'
 end

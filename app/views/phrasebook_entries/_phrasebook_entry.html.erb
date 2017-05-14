@@ -1,4 +1,12 @@
 <tr>
   <td><%= phrasebook_entry.phrase %></td>
   <td><%= phrasebook_entry.translation %></td>
+  <td>
+    <%= link_to phrasebook_entry_path(phrasebook_entry.id),
+                class: 'remove-entry-from-phrasebook-entries',
+                method: :delete,
+                remote: true do %>
+      <i class="fa fa-times" aria-hidden="true"></i>
+    <% end %>
+  </td>
 </tr>

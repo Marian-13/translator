@@ -115,10 +115,24 @@ $(document).ready(function() {
 })
 
 $(document).ready(function() {
+  $("#phrasebook-entries")
+    .on("click", ".remove-entry-from-phrasebook-entries", function() {
+      $(this).parent().parent().remove();
+    })
+})
+
+
+$(document).ready(function() {
   $("#load-phrasebook-entries").click(function() {
+    let phrasebookEntries = $("#phrasebook-entries");
+
     $.ajax({
       method: "GET",
-      url: "phrasebook_entries.js"
+      url: "phrasebook_entries.js",
+      data: {
+        limit: phrasebookEntries.data("limit"),
+        offset: phrasebookEntries.data("offset")
+      }
     });
   })
 })
